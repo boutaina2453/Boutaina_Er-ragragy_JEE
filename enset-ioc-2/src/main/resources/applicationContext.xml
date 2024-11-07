@@ -1,9 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="dao" class="dao.DaoImpl"> </bean>
+    <!-- Version Base de Données -->
+    <bean id="dao" class="dao.DaoImpl" />
+
+    <!-- Version Capteurs -->
+    <bean id="ext" class="ext.DaoImpl2" />
+
+    <bean id="ext" class="ext.DaoImplVWS" />
+
     <bean id="metier" class="metier.MetierImpl">
-    <constructor-arg ref="dao"></constructor-arg>
+        <constructor-arg ref="dao" />
     </bean>
 </beans>
